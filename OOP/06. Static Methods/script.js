@@ -1,5 +1,21 @@
 'use strict';
 
+// Constructor function
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+const ephConstructor = new Person('Ephraim', 1988);
+console.log(ephConstructor);
+
+// Static method
+Person.hey = function () {
+  console.log(`Hey! 👋🏻👋🏻👋🏻`);
+};
+Person.hey();
+
+// Class
 class PersonCl {
   constructor(fullName, birthYear) {
     this.fullName = fullName;
@@ -29,18 +45,26 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static
+  static hey() {
+    console.log(`Hey! 🙋🏻‍♂️🙋🏻‍♂️🙋🏻‍♂️`);
+  }
 }
 
 const eph = new PersonCl('Ephraim S', 1988);
 console.log(eph);
 eph.calcAge();
 eph.greet();
+
 console.log(eph.fullName);
 
 console.log(eph.age);
 
 const walter = new PersonCl('Walter', 1965);
 console.log(walter);
+
+PersonCl.hey();
 
 // Prototypes
 console.log(eph instanceof PersonCl);
